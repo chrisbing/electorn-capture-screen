@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+<body>
+<button id="js-capture">Capture Screen</button>
+<script>
+    const { ipcRenderer } = require('electron')
+
+    document.getElementById('js-capture').addEventListener('click', ()=>{
+        ipcRenderer.send('capture-screen')
+    })
+
+</script>
+</body>
+</html>

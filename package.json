@@ -1,0 +1,15 @@
+{
+  "name": "electorn-capture-screen",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/chrisbing/electorn-capture-screen.git",
+  "author": "Chris",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron ."
+  },
+  "dependencies": {
+    "electron": "^3.0.2",
+    "font-awesome": "^4.7.0"
+  }
+}
