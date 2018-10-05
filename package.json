@@ -6,10 +6,9 @@
   "author": "Chris",
   "license": "MIT",
   "scripts": {
-    "dev": "electron ."
+    "start": "electron ."
   },
   "dependencies": {
-    "electron": "^3.0.2",
-    "font-awesome": "^4.7.0"
+    "electron": "^3.0.2"
   }
 }

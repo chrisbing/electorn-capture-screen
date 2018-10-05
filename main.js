@@ -2,23 +2,17 @@
  * Created by xujian1 on 2018/10/4.
  */
 
-const { app, BrowserWindow, ipcMain, globalShortcut } = require('electron')
-const os = require('os')
+const { app, BrowserWindow, } = require('electron')
+const { useCapture } = require('./lib/capture-main')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
 function createWindow() {
-    globalShortcut.register('Esc', () => {
-        if (captureWin) {
-            captureWin.close()
-            captureWin = null
-        }
-    })
 
-    globalShortcut.register('CmdOrCtrl+A', captureScreen)
-
+    // 初始化截图
+    useCapture()
 
     // 创建浏览器窗口。
     win = new BrowserWindow({ width: 800, height: 600 })
@@ -61,42 +55,5 @@ app.on('activate', () => {
 })
 
 
-let captureWin = null
 
-let captureScreen = (e, args) => {
-    if (captureWin) {
-        return
-    }
-    const { screen } = require('electron')
-    let { width, height } = screen.getPrimaryDisplay().bounds
-    captureWin = new BrowserWindow({
-        [os.platform() === 'win32' ? 'fullscreen' : undefined]: true,
-        width,
-        height,
-        x: 0,
-        y: 0,
-        transparent: true, /* new add line */
-        frame: false,
-        skipTaskbar: true,
-        autoHideMenuBar: true,
-        movable: false,
-        resizable: false,
-        enableLargerThanScreen: true,
-        hasShadow: false,
-    })
-    captureWin.setAlwaysOnTop(true, 'screen-saver')
-    captureWin.setVisibleOnAllWorkspaces(true)
-    captureWin.setFullScreenable(false)
-
-    captureWin.loadFile('capture.html')
-
-    // captureWin.openDevTools()
-
-    captureWin.on('closed', () => {
-        captureWin = null
-    })
-
-
-};
-ipcMain.on('capture-screen', captureScreen)
 
