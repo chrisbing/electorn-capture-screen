@@ -12,8 +12,7 @@
     "dist": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "electron": "^3.0.2",
     "babel-eslint": "^10.0.1",
