@@ -16,6 +16,16 @@
         box-sizing: border-box;
       }
 
+      body {
+        opacity: 0;
+      }
+
+      .capture-video {
+        position: absolute;
+        top: -10000px;
+        left: -10000px;
+      }
+
       .mask {
         position: absolute;
         top: 0;
@@ -77,6 +87,7 @@
     <div id="js-mask" class="mask"></div>
     <canvas id="js-canvas" class="image-canvas"></canvas>
     <div id="js-size-info" class="size-info"></div>
+    <video id="capture-video" class="capture-video"></video>
     <div id="js-toolbar" class="toolbar">
       <div class="iconfont icon-zhongzhi" id="js-tool-reset"></div>
       <div class="iconfont icon-xiazai" id="js-tool-save"></div>
