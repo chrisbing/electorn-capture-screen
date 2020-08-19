@@ -12,15 +12,14 @@
     "dist": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "electron": "^3.0.2",
-    "babel-eslint": "^10.0.1",
-    "electron-builder": "^20.28.4",
-    "eslint": "^5.6.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-html": "^4.0.6",
-    "eslint-plugin-import": "^2.14.0"
+    "babel-eslint": "^10.1.0",
+    "electron-builder": "^22.8.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-import": "^2.22.0",
+    "electron": "^9.2.0"
   }
 }
